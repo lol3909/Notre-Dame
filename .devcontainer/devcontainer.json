@@ -1,0 +1,16 @@
+{
+    "name": "Notre-Dame",
+    "build": {
+        "context": "..",
+        "dockerFile": "../Dockerfile.dev"
+    },
+    "image": "androidsdk/android-30",
+    "remoteUser": "developer",
+    "mounts": ["source=/dev/bus/usb,target=/dev/bus/usb,type=bind"],
+    "settings": {
+      "terminal.integrated.shell.linux": null
+    },
+    "runArgs": ["--privileged"],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/developer/Notre-Dame,type=bind,consistency=delegated",
+    "workspaceFolder": "/home/developer/Notre-Dame"
+}
